@@ -14,12 +14,12 @@
                             <Link :href="route('forums.index')" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
                                 Forums
                             </Link>
-                            <a href="#" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
+                            <Link :href="route('members.index')" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
                                 Members
-                            </a>
-                            <a href="#" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
+                            </Link>
+                            <Link :href="route('search')" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
                                 Search
-                            </a>
+                            </Link>
                         </div>
                     </div>
                     
@@ -32,20 +32,29 @@
                             </button>
                             
                             <div class="relative">
-                                <button class="flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                <button @click="showDropdown = !showDropdown" class="flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                                     <div class="w-8 h-8 bg-gray-400 rounded-full"></div>
                                     <span class="ml-2 text-gray-700">{{ $page.props.auth.user.name }}</span>
                                 </button>
+                                
+                                <div v-if="showDropdown" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                                    <Link :href="route('dashboard')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                        Dashboard
+                                    </Link>
+                                    <Link :href="route('logout')" method="post" as="button" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                        Logout
+                                    </Link>
+                                </div>
                             </div>
                         </div>
                         
                         <div v-else class="flex items-center space-x-2">
-                            <a href="/login" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
+                            <Link :href="route('login')" class="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
                                 Login
-                            </a>
-                            <a href="/register" class="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-md text-sm font-medium transition">
+                            </Link>
+                            <Link :href="route('register')" class="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-md text-sm font-medium transition">
                                 Register
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -70,4 +79,7 @@
 
 <script setup>
 import { Link } from '@inertiajs/vue3';
+import { ref } from 'vue';
+
+const showDropdown = ref(false);
 </script>

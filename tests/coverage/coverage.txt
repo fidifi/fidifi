@@ -1,24 +1,24 @@
 
 
 Code Coverage Report:
-  2025-07-03 03:15:23
+  2025-07-03 14:47:24
 
  Summary:
-  Classes: 100.00% (7/7)
-  Methods: 100.00% (17/17)
-  Lines:   100.00% (53/53)
+  Classes:  6.67% (1/15)
+  Methods: 29.55% (13/44)
+  Lines:   23.46% (61/260)
 
-App\Http\Controllers\ForumController
-  Methods: 100.00% ( 2/ 2)   Lines: 100.00% ( 22/ 22)
+App\Http\Controllers\PostController
+  Methods:  50.00% ( 1/ 2)   Lines:  51.35% ( 19/ 37)
 App\Http\Controllers\ThreadController
-  Methods: 100.00% ( 1/ 1)   Lines: 100.00% ( 11/ 11)
-App\Models\Category
-  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  1/  1)
-App\Models\Forum
-  Methods: 100.00% ( 3/ 3)   Lines: 100.00% (  3/  3)
-App\Models\Post
-  Methods: 100.00% ( 3/ 3)   Lines: 100.00% (  3/  3)
-App\Models\Thread
-  Methods: 100.00% ( 4/ 4)   Lines: 100.00% (  4/  4)
-App\Models\User
+  Methods:   0.00% ( 0/ 3)   Lines:  38.30% ( 18/ 47)
+App\Http\Requests\StoreReplyRequest
   Methods: 100.00% ( 3/ 3)   Lines: 100.00% (  9/  9)
+App\Models\Forum
+  Methods:  66.67% ( 2/ 3)   Lines:  66.67% (  2/  3)
+App\Models\Post
+  Methods:  50.00% ( 3/ 6)   Lines:  50.00% (  3/  6)
+App\Models\Thread
+  Methods:  75.00% ( 3/ 4)   Lines:  75.00% (  3/  4)
+App\Models\User
+  Methods:  25.00% ( 1/ 4)   Lines:  70.00% (  7/ 10)

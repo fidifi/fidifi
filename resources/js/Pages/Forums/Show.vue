@@ -23,10 +23,15 @@
                 <h1 data-cy="forum-title" class="text-2xl font-bold text-gray-900">{{ forum.name }}</h1>
                 <p v-if="forum.description" class="text-gray-600 mt-2">{{ forum.description }}</p>
                 
-                <div class="mt-4">
-                    <button class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
+                <div v-if="$page.props.auth?.user" class="mt-4">
+                    <Link :href="route('threads.create', forum.slug)" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
                         New Thread
-                    </button>
+                    </Link>
+                </div>
+                <div v-else class="mt-4">
+                    <Link :href="route('login')" class="bg-gray-400 text-white px-4 py-2 rounded-md hover:bg-gray-500 transition">
+                        Login to Create Thread
+                    </Link>
                 </div>
             </div>
 

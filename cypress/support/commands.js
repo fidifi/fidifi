@@ -22,3 +22,11 @@ Cypress.Commands.add('seedDatabase', () => {
 Cypress.Commands.add('getByTestId', (testId) => {
   return cy.get(`[data-cy="${testId}"]`)
 })
+
+// Authentication command
+Cypress.Commands.add('login', (email, password = 'password') => {
+  cy.visit('/login')
+  cy.get('input[name="email"]').type(email)
+  cy.get('input[name="password"]').type(password)
+  cy.get('button[type="submit"]').click()
+})
